@@ -1,5 +1,7 @@
-fastapi==0.68.0
+tofastapi==0.68.0
 uvicorn==0.15.0
 sqlalchemy==1.4.25
 pyjwt==2.3.0
 cachetools==4.2.4
+opencv-python
+mediapipe
