@@ -1,58 +1,72 @@
-FastAPI User Management Application with Image Processing
-This is a FastAPI application for managing users, including CRUD operations (Create, Read, Update, Delete), and image processing functionality.
+# FastAPI User Management Application with Image Processing
 
-1. Installation
-Clone the repository:
+This FastAPI application allows you to manage users with CRUD operations (Create, Read, Update, Delete), and includes image processing functionality.
 
-git clone https://github.com/bahadurkhan110/fastapi_ml_web_app.git
-cd fastapi_ml_web_app
+## Installation
 
-2. Create a virtual environment (optional but recommended):
-python -m venv venv
-source venv/bin/activate  # For Linux/Mac
-.\venv\Scripts\activate   # For Windows
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/bahadurkhan110/fastapi_ml_web_app.git
+    cd fastapi_ml_web_app
+    ```
 
-3. Install dependencies:
+2. **Create a virtual environment (optional but recommended):**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # For Linux/Mac
+    .\venv\Scripts\activate   # For Windows
+    ```
 
-pip install -r requirements.txt
+3. **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-4. Install additional dependencies for image processing:
-
-pip install mediapipe opencv-python
+4. **Install additional dependencies for image processing:**
+    ```bash
+    pip install mediapipe opencv-python
+    ```
 
 ## Usage
 
-1. uvicorn main:app --reload
+1. **Start the FastAPI server:**
+    ```bash
+    uvicorn main:app --reload
+    ```
 
-2. Once the server is running, you can access the API documentation at http://localhost:8000/docs in your web browser. This page provides interactive documentation for all API endpoints.
+2. **Access the API documentation:**
+    Once the server is running, you can access the API documentation at [http://localhost:8000/docs](http://localhost:8000/docs) in your web browser. This page provides interactive documentation for all API endpoints.
 
-3. Use tools like curl, Postman, or your preferred HTTP client to interact with the API endpoints. Here are some examples:
+3. **Interact with the API endpoints:**
+    Use tools like curl, Postman, or your preferred HTTP client to interact with the API endpoints. Here are some examples:
 
-Create User:
+    - **Create User:**
+        ```bash
+        curl -X POST "http://localhost:8000/users/" -H "Content-Type: application/json" -d "{\"name\": \"John Doe\"}"
+        ```
 
-curl -X POST "http://localhost:8000/users/" -H "Content-Type: application/json" -d "{\"name\": \"John Doe\"}"
+    - **Retrieve User:**
+        ```bash
+        curl -X GET "http://localhost:8000/users/1"
+        ```
 
-Retrieve User:
+    - **Update User:**
+        ```bash
+        curl -X PUT "http://localhost:8000/users/1" -H "Content-Type: application/json" -d "{\"new_name\": \"Jane Doe\"}"
+        ```
 
-curl -X GET "http://localhost:8000/users/1"
+    - **Delete User:**
+        ```bash
+        curl -X DELETE "http://localhost:8000/users/1"
+        ```
 
-Update User:
-
-curl -X PUT "http://localhost:8000/users/1" -H "Content-Type: application/json" -d "{\"new_name\": \"Jane Doe\"}"
-
-
-Delete User:
-
-curl -X DELETE "http://localhost:8000/users/1"
-
-
-### Image Processing Endpoint:
+### Image Processing Endpoint
 
 This application includes an endpoint for image processing. To use it:
-Send a POST request to http://localhost:8000/image/processing/ with the image file as the request body.
-The endpoint will process the image, detect faces, crop the detected facial boundaries, and return both the cropped image and facial landmarks.
 
+- **Send a POST request** to [http://localhost:8000/image/processing/](http://localhost:8000/image/processing/) with the image file as the request body.
+- The endpoint will process the image, detect faces, crop the detected facial boundaries, and return both the cropped image and facial landmarks.
+
+Example using curl:
+```bash
 curl -X POST -F "file=@/path/to/image.jpg" "http://localhost:8000/image/processing/"
-
-
-
