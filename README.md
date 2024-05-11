@@ -1,7 +1,14 @@
 # FastAPI User Management Application with Image Processing
 
 This FastAPI application allows you to manage users with CRUD operations (Create, Read, Update, Delete), and includes image processing functionality.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+## Demonstration Video
 
+Check out our demonstration video showcasing the functionality and features of our application:
+
+[Watch the Loom video](https://www.loom.com/share/e5b68cfd8b034aebb9c6d7e5f4a4a4f6?sid=4fc0b7b3-b285-4d46-b50f-26698fee9376)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 ## Installation
 
 1. **Clone the repository:**
