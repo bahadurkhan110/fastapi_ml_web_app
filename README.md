@@ -73,8 +73,7 @@ curl -X POST -F "file=@/path/to/image.jpg" "http://localhost:8000/image/processi
 
 
 ### Results
-
 Below is an example of the processed image returned by the image processing endpoint:
 
-![Processed Image](processed_image.jpg)
+![Image](processed_image.jpg)
 
