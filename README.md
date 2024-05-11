@@ -70,3 +70,11 @@ This application includes an endpoint for image processing. To use it:
 Example using curl:
 ```bash
 curl -X POST -F "file=@/path/to/image.jpg" "http://localhost:8000/image/processing/"
+
+
+### Results
+
+Below is an example of the processed image returned by the image processing endpoint:
+
+![Processed Image](processed_image.jpg)
+
